@@ -1,0 +1,24 @@
+[
+    {
+        "mcu_name": "arduino_uno",
+        "compiler_command":"make -f _argus_path_placeholder_/frameworks/AVR/Makefile SRC_DIR=_project_path_placeholder_",
+        "qemu_command":"qemu-system-avr -machine uno -bios _firmware_path_placeholder_ -plugin _argus_path_placeholder_/qemu_plugins/it.so,elf=_firmware_path_placeholder_,out=_output_path_placeholder_/trace.txt -plugin _argus_path_placeholder_/qemu_plugins/stop.so,addr=0x8000 -nographic",
+        "start_count_condition": "IN: main",
+        "end_count_condition": "0x8000", 
+        "dependencies": ["avr-gcc","qemu-system-avr"],
+        "instructions": ["IN", "SUBI", "SBC", "OUT", "LDI", "STS", "CALL", "PUSH", "MOVW", "ADD", "ADC", "MOV", "CP", "CPC", "BRNE", "LDZ2", "CPI", "BRCS", "EOR", "RJMP", "DEC", "BRPL", "OR", "SUB", "POP", "ADIW", "STDY", "SBIW", "LDDY", "LDDZ", "COM", "AND", "STDZ", "JMP", "STZ2", "SBCI", "BREQ", "STX2", "LDX2", "LDS", "LDX1", "ANDI", "NEG", "LSR", "STX1", "MUL", "SBRC", "BST", "BLD", "BRTC", "RCALL", "ASR", "ROR", "SWAP", "BRCC", "INC", "ORI", "STY2", "LDX3", "STX3", "STZ3", "LDY2", "CPSE", "SBRS", "BRGE", "BRLT", "LDZ3", "STY3", "LPMX", "LPM2", "MULSU", "MULS", "LDY3"] ,
+        "coefs": [0.0, 1.0725022447432962e-05, 5.1238001139059224e-05, 0.0, 0.0, 0.0, 0.0, 0.0, 1.1438619068586781e-05, 0.0, 2.262353449096617e-05, 0.0, 0.0, 0.0, 0.0, 0.0, 9.70044459375848e-05, 0.0, 0.0, 0.0, 0.0, 6.112077954895117e-05, 0.0, 0.0, 1.842761193675783e-05, 0.0, 0.00014909336678680253, 4.6033981550918e-05, 3.337744953609325e-08, 0.0, 0.0, 0.0, 0.0, 0.0022670560807430498, 0.0, 0.0, 0.0002328680513416282, 9.758989574535276e-05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4.819185522653123e-05, 7.181339406910281e-05, 0.0, 0.00022747100412582482, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01986204141313856, 0.0, 0.0, 0.0005173598133180245, 0.010397729076290383, 0.0, 0.0, 0.0, 0.0006019991234983578, 0.010105282149294216, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] ,
+        "Emax": 126.97626000000002
+    },
+    {
+        "mcu_name": "esp32c3",
+        "compiler_command":"idf.py build",
+        "qemu_command": "qemu-system-riscv32 -nographic -machine esp32c3 -drive file=_qemu_flash_bin_placeholder_,if=mtd,format=raw -plugin _argus_path_placeholder_/qemu_plugins/it.so,elf=_firmware_path_placeholder_,out=_output_path_placeholder_/trace.txt",
+        "start_count_condition": "IN: app_main",
+        "end_count_condition": "IN: printf",
+        "dependencies": ["idf.py","qemu-system-riscv32"],
+        "instructions": ["addi", "sw", "jal", "lui", "lw", "beqz", "mv", "j", "andi", "bnez", "slli", "add", "auipc", "jalr", "csrrci", "csrrs", "beq", "bgt", "bne", "xori", "sb", "and", "lbu", "bleu", "ble", "seqz", "or", "bgtu", "sltiu", "ori", "srli", "sub", "srl", "sll", "xor", "mul", "not", "lh", "bltz", "lhu", "sh", "fence", "remu", "divu", "csrrc", "csrrw", "div", "sltu", "neg", "snez", "sra", "bgez", "jr", "bgtz", "lb", "blez", "srai", "mulhu", "mulh", "rem", "slti", "slt", "csrrsi"] ,
+        "coefs": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4.212751156307399e-06, 4.401585298062036e-06, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 3.044870870406048e-07, 0.0, 0.0, 0.0, 2.363868212812028e-07, 0.0, 0.0, 7.080429962414383e-06, 0.0, 0.0, 0.0, 8.271661457281013e-07, 0.0, 0.0, 1.3275307216224415e-06, 0.0, 0.0, 0.0, 0.0, 1.6100831758692507e-06, 1.2591508971657787e-05, 0.012519386293239886, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0002149399377341943, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 9.434182165666959e-06, 0.0, 0.0001028391095861293, 0.0, 0.0, 1.1415415551093649e-05, 0.0, 0.012536230690107848, 0.0, 0.0] ,
+        "Emax": 19.20084
+    }
+]
