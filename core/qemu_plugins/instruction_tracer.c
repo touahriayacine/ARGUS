@@ -9,19 +9,6 @@
 
 QEMU_PLUGIN_EXPORT int qemu_plugin_version = QEMU_PLUGIN_VERSION;
 
-/*
- * Usage:
- *   -plugin ./trace.so,elf=/path/to/firmware.elf,out=/path/to/trace.txt
- *
- * Behavior:
- *   - Loads function symbols from elf=<...>
- *   - Logs each executed instruction in execution order
- *   - When disassembly is "NOP" followed only by spaces/tabs, stops logging
- *   - Flushes after each instruction to reduce data loss on brutal termination
- */
-
-/* ---------------- ELF32 symbol loader (minimal) ---------------- */
-
 #define EI_NIDENT 16
 #define ELFCLASS32 1
 #define ELFDATA2LSB 1
