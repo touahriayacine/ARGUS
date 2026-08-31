@@ -2,38 +2,7 @@
 
 ARGUS is the first toolkit that exists to estimate the energy consumption and to attribute an energy effeciency score to encryption workloads designed for IoT devices. ARGUS for now, supports two microcontrollers **Arduino Uno AVR-8** and **ESP32 C3 mini RISC-V**. It doesn't require any piece of hardware to perform the estimation due to the instruction tracing fully emulated with QEMU software. QEMU is an open-source project and has a large comunity. ARGUS enables a unified software to capture a fuller and wider energy profile of encryption programs through estimations across multiple MCUs and CPU architectures. For now, ARGUS is tested on Ubuntu Linux operating system only.
 
-## 1. Repository Structure
-```bash
-ARGUS/
-│
-├── core/
-│   ├── frameworks/
-│   │
-│   ├── qemu_plugins/
-│   │   ├── it.so
-│   │   └── stop.so
-│   │
-│   ├── mcu_configs.json
-│   └── Microcontroller.py
-│
-├── tests/
-│   ├── AVR/
-│   └── RISCV/
-│   
-├── utils/
-│
-├── main.py
-├── README.md
-└── requirements.txt
-```
-
-- ***framworks*** folder contains the necessary libraries to compile Arduino projects,
-- ***it.so*** file is the QEMU plugin to perform instruction tracing. It outputs a file that contains the sequence of binary instructions emulated by QEMU,
-- ***stop.so*** file is another QEMU plugin to end the emulation when it hits a specific address,
-- ***tests*** folder contains AVR and RISC-V projects to test,
-- ***requirements.txt*** file contains all the dependencies required for ARGUS to run.
-
-## 2. Installation
+## 1. Installation
 
 Clone the repository:
 
@@ -87,7 +56,7 @@ cd qemu/
 ./configure --disable-werror
 ```
 
-## 3. Usage
+## 2. Usage
 
 To test **ARGUS***, we created the ***tests/*** folder for both MCUs:
 
@@ -108,6 +77,6 @@ bash test_all.sh
 ```
 
 ---
-## Licence
+## 3. Licence
 
 This repository is licensed under Academic Software Evaluation License, detailed in the LICENSE.txt file.
