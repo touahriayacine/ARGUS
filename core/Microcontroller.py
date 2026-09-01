@@ -175,4 +175,4 @@ class Microcontroller:
     def calculate_energy_score(self):
         # normalize the energy consumption to a score bounded between 0 and 1
         Emax = self.configuration["Emax"]
-        self.energy_score = 1- min(self.energy_consumption / Emax,1)
+        self.energy_score = round(1- min(self.energy_consumption / Emax,1),2)
